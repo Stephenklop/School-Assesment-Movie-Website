@@ -1,0 +1,54 @@
+.mobileback {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.5rem;
+    width: 100%;
+    background-color: black;
+
+    &__backicon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4.5rem;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: none;
+        outline: 0;
+        transition: all .2s;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ion-icon {
+            color: white;
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    &__text {
+        overflow: hidden;
+        font-size: 1.4rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: white;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .mobileback {
+        display: none;
+    }
+}

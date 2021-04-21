@@ -1,4 +1,99 @@
-.detail,
+.detail {
+    &__main {
+        padding-top: 4.5rem;
+
+        &-details {
+            margin: 2.5rem 1.5rem;
+
+            &__left {
+                display: none;
+            }
+
+            &__right {
+                &-overview {
+                    margin-bottom: 3rem;
+
+                    &__title {
+                        font-size: 1.8rem;
+                        margin-bottom: 1rem;
+                        color: white;
+                        letter-spacing: .04rem;
+                        font-weight: 400;
+                    }
+
+                    &__desc {
+                        font-size: 1.5rem;
+                        color: #fafafa;
+                        font-weight: 400;
+                        line-height: 1.6;
+                    }
+                }
+
+                &-stats {
+                    display: flex;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    margin-bottom: 3rem;
+
+                    &__item {
+                        width: 100%;
+                        display: flex;
+                        padding: .2rem 0;
+
+                        p {
+                            font-size: 1.5rem;
+                            line-height: 1.6rem;
+                            color: white;
+
+                            &:first-child {
+                                width: 9rem;
+                                margin-right: 1.5rem;
+                            }
+                        }
+                    }
+                }
+
+                &-external {
+                    display: flex;
+                    margin-left: -.5rem;
+                    list-style: none;
+
+                    &__item {
+                        a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 4.4rem;
+                            height: 4.4rem;
+                            color: white;
+                            text-decoration: none;
+                            background-color: transparent;
+
+                            ion-icon {
+                                width: 2.4rem;
+                                height: 2.4rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .detail {
+        &__main {
+            &-details {
+                margin-right: 5rem;
+                margin-left: 5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .detail,
 .castDetail {
     display: grid;
     grid-template-columns: 10rem 1fr;
@@ -9,30 +104,7 @@
 
     &__main {
         grid-area: detailmain;
-
-        &-nav {
-            display: flex;
-            justify-content: center;
-            height: 4.8rem;
-
-            &__button {
-                display: block;
-                color: white;
-                border-bottom-color: white;
-                background: none;
-                width: auto;
-                margin: 0 3rem;
-                font-size: 2rem;
-                border-bottom: .2rem solid transparent;
-                padding: 0;
-                font-weight: 500;
-                text-transform: uppercase;
-                letter-spacing: .04rem;
-                border-right: .1rem solid #141414;
-                outline: 0;
-                // transition: color .2s ease;
-            }
-        }
+        padding-top: 0;
 
         &-details {
             display: flex;
@@ -122,4 +194,20 @@
             }
         }
     }
+}
+
+.castDetail {
+    position: relative;
+
+    &__main {
+        &-details {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+
+            &__right {
+                margin-right: 5rem;
+            }
+        }
+    }
+}
 }

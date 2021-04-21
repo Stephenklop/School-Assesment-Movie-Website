@@ -7,9 +7,11 @@
 @import 'layout/header';
 @import 'layout/footer';
 
+@import 'components/mobileback';
 @import 'components/navigation';
 @import 'components/carousel';
 @import 'components/search';
+@import 'components/addmovie';
 
 @import 'pages/home';
 @import 'pages/detail';

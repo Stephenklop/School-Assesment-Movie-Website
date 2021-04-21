@@ -1,13 +1,27 @@
 .homepage {
+    position: relative;
     display: grid;
-    grid-template-columns: 10rem 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
     grid-template-areas: 
-    "navigation search"
-    "navigation homemain"
-    ". footer";
+    "mobileback"
+    "search"
+    "homemain"
+    "footer"
+    "navigation";
 
     &__main {
         grid-area: homemain;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .homepage {
+        grid-template-columns: 10rem 1fr;
+        grid-template-areas:
+        ". addmovie"
+        ". search"
+        ". searchresults"
+        "navigation homemain"
+        "navigation footer";
     }
 }

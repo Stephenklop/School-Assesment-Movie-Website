@@ -1,20 +1,167 @@
 .search {
     grid-area: search;
     position: fixed;
-    top: -7.5rem;
-    right: 0;
-    width: calc(100% - 10rem);
-    z-index: 10;
-    height: 7.5rem;
-    border: none;
-    background-color: #202124;
+    padding: 2.1rem 1.5rem;
     font-size: 1.6rem;
     color: white;
+    background-color: #202124;
+    overflow: visible;
+    line-height: 1.15;
+    top: -7.5rem;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    height: 6rem;
+    border: none;
     transition: all .2s;
-    padding: 0 5rem;
 
     &-active {
         top: 0;
         transition: all .2s;
+    }
+
+    &-results {
+        grid-area: searchresults;
+        position: fixed;
+        z-index: 5;
+        right: 0;
+        bottom: 0;
+        display: none;
+        width: 100%;
+        height: calc(100% - 6rem);
+        background-color: #141414;
+        padding: 3rem 1.5rem;
+        overflow: scroll;
+        overflow-x: hidden;
+
+        &-active {
+            display: block;
+        }
+
+        &__for {
+            font-size: 1.8rem;
+            letter-spacing: .04rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        &__results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+
+            &-item {
+                margin: 0 .4rem;
+                margin-bottom: 2rem;
+
+                &__img {
+                    width: 100%;
+                }
+
+                &__title {
+                    margin-bottom: .5rem;
+                    font-size: 1.3rem;
+                    margin-top: 1rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    letter-spacing: .04rem;
+                    white-space: nowrap;
+                    color: white;
+                }
+
+                &__link {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .search {
+        &-results {
+            &__results {
+                grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .search {
+        grid-area: search;
+        position: fixed;
+        top: -7.5rem;
+        right: 0;
+        width: calc(100% - 10rem);
+        z-index: 10;
+        height: 7.5rem;
+        border: none;
+        background-color: #202124;
+        font-size: 1.6rem;
+        color: white;
+        transition: all .2s;
+        padding: 0 5rem;
+    
+        &-active {
+            top: 0;
+            transition: all .2s;
+        }
+    
+        &-results {
+            grid-area: searchresults;
+            position: fixed;
+            z-index: 5;
+            right: 0;
+            bottom: 0;
+            display: none;
+            width: calc(100% - 10rem);
+            height: calc(100% - 7.5rem);
+            background-color: #141414;
+            padding: 5rem;
+            overflow: scroll;
+            overflow-x: hidden;
+    
+            &-active {
+                display: block;
+            }
+    
+            &__for {
+                font-size: 2.4rem;
+                letter-spacing: .04rem;
+                font-weight: 400;
+                color: white;
+                margin-bottom: 2rem;
+            }
+    
+            &__results {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    
+                &-item {
+                    margin: 0 .4rem;
+                    margin-bottom: 2rem;
+    
+                    &__img {
+                        width: 100%;
+                    }
+    
+                    &__title {
+                        margin-bottom: .5rem;
+                        font-size: 1.5rem;
+                        margin-top: 1rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        letter-spacing: .04rem;
+                        white-space: nowrap;
+                        color: white;
+                    }
+    
+                    &__link {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
     }
 }

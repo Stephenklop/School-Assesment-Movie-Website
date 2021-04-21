@@ -19,6 +19,8 @@ getFromURL = () => {
 }
 
 setMovieDetails = (movieDetails) => {
+    setPageTitle(movieDetails.title);
+
     $('.detail__main-details__left-img').attr('src', apiImageUrl + movieDetails.poster_path);
     $('.detail__main-details__right-overview__desc').text(movieDetails.overview);
     $('.detail__main-details__right-stats__item--releasedate').text(convertDate(movieDetails.release_date));
@@ -66,6 +68,10 @@ setMovieDetails = (movieDetails) => {
         }
     }
     $('.detail__main-details__right-stats__item--production').text(productionString);
+}
+
+setPageTitle = (title) => {
+    $('.mobileback__text').text(title);
 }
 
 setSocials = (movieSocials) => {
@@ -148,3 +154,7 @@ convertCurrency = (currency) => {
         currency: 'USD'
     }).format(currency);
 }
+
+$('.mobileback__backicon').on('click', () => {
+    window.history.back();
+})

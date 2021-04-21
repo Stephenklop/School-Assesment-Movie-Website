@@ -5,7 +5,8 @@ window.onload = async () => {
 
     setCarousel(movieUpcoming);
     setMovieCarousel();
-    setTVShowCarousel();
+    setSearch();
+    setAddMovie();
 }
 
 /* Carousel */
@@ -16,7 +17,8 @@ const setCarousel = (movieUpcoming) => {
         draggable: false,
         freeScroll: false,
         autoPlay: 15000,
-        resize: true,
+        setGallerySize: false,
+        adaptiveHeight: false,
         lazyLoad: movieUpcoming.results.length
     });
 
@@ -50,22 +52,6 @@ const setMovieCarousel = () => {
     });
 }
 
-const setTVShowCarousel = () => {
-    getAllTrendingTVShows()
-    .then(res => {
-        var $tvShowCarousel = $('.tvshow-carousel').flickity({
-            pageDots: false,
-            prevNextButtons: false,
-            cellAlign: 'left',
-            accessibility: true,
-            contain: true,
-            lazyLoad: res.results.length
-        });
-
-        fillTVShowCarousel($tvShowCarousel, res);
-    });
-}
-
 const fillMovieCarousel = async ($movieCarousel, apiResultMovie) => {
     console.log(apiResultMovie);
     for(let i = 0; i < apiResultMovie.results.length; i++) {
@@ -76,26 +62,20 @@ const fillMovieCarousel = async ($movieCarousel, apiResultMovie) => {
     console.log(apiResultMovie);
 }
 
-const fillTVShowCarousel = async ($tvShowCarousel, apiResultTV) => {
-    for(let i = 0; i < apiResultTV.results.length; i++) {
-        var $cellElems = $(makeCellHtml('tvshow-carousel', apiResultTV.results[i]));
-        $tvShowCarousel.flickity( 'append', $cellElems );
-    }
-
-    console.log(apiResultTV);
-}
-
 const makeCellHtml = (itemClass, item) => {
     return `
         <div class="${itemClass}__item">
             <a href="detail.html?id=${item.id}" class="${itemClass}__item-link">
                 <img src="./assets/img/movieLazyload.png" data-flickity-lazyload-srcset="${apiImageUrl + item.poster_path}" alt="${item.title}" class="${itemClass}__item-img" />
                 <h2 class="${itemClass}__item-title">${item.title}</h2>
-                <div class="${itemClass}__item-rating">RATING</div>
             </a>
         </div>
     `;
 }
+
+/** Add to makeCellHtml for rating
+ * <div class="${itemClass}__item-rating">RATING</div>
+ */
 
 const makeCellHtmlMain = (item) => {
     return `
@@ -136,6 +116,73 @@ const convertRunTime = (runtime) => {
     return `${rhours}h ${rminutes}min`;
 }
 
-$('.navigation__list-item__search').on("click", () => {
-    document.querySelector('.search').classList.toggle("search-active");
-});
+const setSearch = () => {
+
+    // Initialize all search components when clicked on search button
+    $('.navigation__list-item__search').on("click", () => {
+        const search = document.querySelector('.search');
+        const details = document.querySelector('.search-results');
+
+        // Check if search bar is already initialized 
+        if(search.classList.contains("search-active")) {
+
+            // Remove class from the search bar
+            search.classList.remove("search-active");
+
+            // Empty the search bar
+            search.value = "";
+
+            // Remove class from the search details bar
+            details.classList.remove('search-results-active');
+        } else {
+
+            // If search bar is not initialized yet, add class to the search bar
+            search.classList.add("search-active");
+        }
+    });
+
+    $(".search").on("keyup", async () => {
+        const query = $(".search").val();
+        $(document.body).css("overflow", "hidden");
+
+        if(query !== "") {
+            document.querySelector('.search-results').classList.add("search-results-active");
+        } else {
+            document.querySelector('.search-results').classList.remove("search-results-active");
+            $(document.body).css("overflow", "unset");
+        }
+
+        $(".search-results__for").text(`Results For: ${query}`);
+        $('.search-results__results').empty();
+
+        const searchResults = await searchInApi(query);
+
+        for(let i = 0; i < searchResults.results.length; i++) {
+            if(searchResults.results[i].poster_path !== null) {
+                $('.search-results__results').append(`
+                <div class="search-results__results-item">
+                    <a href="detail.html?id=${searchResults.results[i].id}" class="search-results__results-item__link">
+                        <img alt="${searchResults.results[i].title}" src="${apiImageUrl + searchResults.results[i].poster_path}" class="search-results__results-item__img">
+                        <h2 class="search-results__results-item__title">${searchResults.results[i].title}</h2>    
+                    </a>
+                </div>
+            `)
+            } else {
+                $('.search-results__results').append(`
+                <div class="search-results__results-item">
+                    <a href="detail.html?id=${searchResults.results[i].id}" class="search-results__results-item__link">
+                        <img alt="${searchResults.results[i].title}" src="./assets/img/movieLazyload.png" class="search-results__results-item__img">
+                        <h2 class="search-results__results-item__title">${searchResults.results[i].title}</h2>    
+                    </a>
+                </div>
+            `)
+            }
+        }
+    });
+}
+
+const setAddMovie = () => {
+    $('.navigation__list-item__addmovie').on("click", () => {
+        document.querySelector('.addmovie').classList.toggle("addmovie-active");
+    });
+}

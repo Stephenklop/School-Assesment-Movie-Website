@@ -16,13 +16,18 @@
     <nav class="navigation">
         <ul class="navigation__list">
             <li class="navigation__list-item">
-                <a href="#" class="active">
+                <a href="index.html" class="active">
                     <ion-icon name="home-outline"></ion-icon>
                 </a>
             </li>
             <li class="navigation__list-item">
-                <a href="#">
+                <a href="about.html">
                     <ion-icon name="person-outline"></ion-icon>
+                </a>
+            </li>
+            <li class="navigation__list-item navigation__list-item__addmovie">
+                <a>
+                    <ion-icon name="add-outline"></ion-icon>
                 </a>
             </li>
             <li class="navigation__list-item navigation__list-item__search">
@@ -35,6 +40,15 @@
     
     <!-- Search Bar -->
     <input type="search" class="search" placeholder="Search for a movie...">
+    <section class="search-results">
+        <h2 class="search-results__for">Results For: </h2>
+        <div class="search-results__results"></div>
+    </section>
+
+    <!-- Add Movie Bar -->
+    <section class="addmovie">
+
+    </section>
 
     <!-- Main Section -->
     <section class="homepage__main">
@@ -44,22 +58,22 @@
 
         <!-- Trending Movies -->
         <section class="movie-carousel-container">
-            <h1 class="movie-carousel-container__title">Trending Movies <a href="#">Explore All</a></h1>
+            <h1 class="movie-carousel-container__title">Trending Movies</h1>
             <div class="movie-carousel"></div>
         </section>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; Stephen Klop. All rights reserved.</p>
+        <p>&copy; 2021 All rights reserved.</p>
         <p>Designed by 
             <a href="https://jason.codes/">Jason Ujma-Alvis</a>, built by 
-            <a href="https://github.com/Stephenklop">Stephen Klop</a>, data provided by 
+            <a href="./about.html">Stephen Klop</a>, data provided by 
             <a href="https://www.themoviedb.org/">TMDb</a>.
         </p>
         <ul>
             <li>
-                <a href="./about.html">
+                <a href="https://github.com/Stephenklop">
                     <ion-icon name="logo-github"></ion-icon>
                 </a>
             </li>

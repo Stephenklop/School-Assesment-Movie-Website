@@ -5,6 +5,10 @@ const connect = (link) => {
     return fetch(`https://api.themoviedb.org/3/${link}?api_key=${apiKey}`);
 }
 
+const connectSearch = (query) => {
+    return fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`);
+}
+
 // Movies
 const getAllNowPlayingMovies = () => {
     return new Promise((result, reject) => {
@@ -110,6 +114,18 @@ const getPersonDetails = (personId) => {
 const getPersonSocials = (personId) => {
     return new Promise((result, reject) => {
         connect(`person/${personId}/external_ids`)
+        .then(data => {
+            return data.json();
+        })
+        .then(res => result(res))
+        .catch(err => reject(err));
+    });
+}
+
+// Search
+const searchInApi = (query) => {
+    return new Promise((result, reject) => {
+        connectSearch(query)
         .then(data => {
             return data.json();
         })

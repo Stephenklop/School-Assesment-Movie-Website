@@ -7,6 +7,9 @@
 @import 'layout/header';
 @import 'layout/footer';
 
+@import 'components/navigation';
 @import 'components/carousel';
+@import 'components/search';
 
 @import 'pages/home';
+@import 'pages/detail';

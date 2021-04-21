@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieSearch</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./styles/css/style.css">
+</head>
+<body class="detail">
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <ul class="navigation__list">
+            <li class="navigation__list-item">
+                <a href="#" class="active">
+                    <ion-icon name="home-outline"></ion-icon>
+                </a>
+            </li>
+            <li class="navigation__list-item">
+                <a href="#">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+            </li>
+            <li class="navigation__list-item">
+                <a href="#">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <!-- Main Section -->
+    <section class="detail__main">
+        <section class="detail__main-details">
+            <div class="detail__main-details__left">
+                <img class="detail__main-details__left-img">
+            </div>
+            <div class="detail__main-details__right">
+                <div class="detail__main-details__right-overview">
+                    <h2 class="detail__main-details__right-overview__title">Storyline</h2>
+                    <p class="detail__main-details__right-overview__desc"></p>
+                </div>
+                <ul class="detail__main-details__right-stats">
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Released</p>
+                        <p class="detail__main-details__right-stats__item--releasedate"></p>
+                    </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Runtime</p>
+                        <p class="detail__main-details__right-stats__item--runtime"></p>
+                    </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Director</p>
+                        <p class="detail__main-details__right-stats__item--director"></p>
+                    </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Budget</p>
+                        <p class="detail__main-details__right-stats__item--budget"></p>
+                    </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Revenue</p>
+                        <p class="detail__main-details__right-stats__item--revenue"></p>
+                    </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Genre</p>
+                        <p class="detail__main-details__right-stats__item--genre"></p>
+                    </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Status</p>
+                        <p class="detail__main-details__right-stats__item--status"></p>
+                    </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Language</p>
+                        <p class="detail__main-details__right-stats__item--language"></p>
+                    </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Production</p>
+                        <p class="detail__main-details__right-stats__item--production"></p>
+                    </li>
+                </ul>
+                <ul class="detail__main-details__right-external"></ul>
+            </div>
+        </section>
+
+        <section class="cast-carousel-container">
+            <h1 class="cast-carousel-container__title">Cast</h1>
+            <div class="cast-carousel"></div>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; Stephen Klop. All rights reserved.</p>
+        <p>Designed by 
+            <a href="https://jason.codes/">Jason Ujma-Alvis</a>, built by 
+            <a href="https://github.com/Stephenklop">Stephen Klop</a>, data provided by 
+            <a href="https://www.themoviedb.org/">TMDb</a>.
+        </p>
+        <ul>
+            <li>
+                <a href="https://github.com/Stephenklop" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/stephen-klop-982b79149/" target="_blank">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:hi@stephenklop.nl" target="_blank">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./assets/js/apiService.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/detail.js"></script>
+</body>
+</html>

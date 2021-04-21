@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieSearch</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./styles/css/style.css">
+</head>
+<body class="castDetail">
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <ul class="navigation__list">
+            <li class="navigation__list-item">
+                <a href="#" class="active">
+                    <ion-icon name="home-outline"></ion-icon>
+                </a>
+            </li>
+            <li class="navigation__list-item">
+                <a href="#">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+            </li>
+            <li class="navigation__list-item">
+                <a href="#">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <!-- Main Section -->
+    <section class="castDetail__main">
+        <section class="castDetail__main-details">
+            <div class="castDetail__main-details__left">
+                <img class="castDetail__main-details__left-img">
+            </div>
+            <div class="castDetail__main-details__right">
+                <div class="castDetail__main-details__right-overview">
+                    <h2 class="castDetail__main-details__right-overview__name"></h2>
+                    <p class="castDetail__main-details__right-overview__desc"></p>
+                </div>
+                <ul class="castDetail__main-details__right-stats">
+                    <li class="castDetail__main-details__right-stats__item">
+                        <p>Known For</p>
+                        <p class="castDetail__main-details__right-stats__item--knownfor"></p>
+                    </li>
+                    <li class="castDetail__main-details__right-stats__item">
+                        <p>Born</p>
+                        <p class="castDetail__main-details__right-stats__item--born"></p>
+                    </li>
+                    <li class="castDetail__main-details__right-stats__item">
+                        <p>Place of Birth</p>
+                        <p class="castDetail__main-details__right-stats__item--placeofbirth"></p>
+                    </li>
+                </ul>
+                <ul class="castDetail__main-details__right-external"></ul>
+            </div>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; Stephen Klop. All rights reserved.</p>
+        <p>Designed by 
+            <a href="https://jason.codes/">Jason Ujma-Alvis</a>, built by 
+            <a href="https://github.com/Stephenklop">Stephen Klop</a>, data provided by 
+            <a href="https://www.themoviedb.org/">TMDb</a>.
+        </p>
+        <ul>
+            <li>
+                <a href="https://github.com/Stephenklop" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/stephen-klop-982b79149/" target="_blank">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:hi@stephenklop.nl" target="_blank">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./assets/js/apiService.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/castDetail.js"></script>
+</body>
+</html>

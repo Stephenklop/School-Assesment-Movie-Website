@@ -1,0 +1,13 @@
+.homepage {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "navigation search"
+    "navigation homemain"
+    ". footer";
+
+    &__main {
+        grid-area: homemain;
+    }
+}

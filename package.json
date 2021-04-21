@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Stephenklop/movieWebsiteAssesment#readme",
   "dependencies": {
+    "flickity-imagesloaded": "^2.0.0",
     "node-sass": "^5.0.0"
   }
 }

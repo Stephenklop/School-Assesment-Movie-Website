@@ -89,14 +89,40 @@
                         <p>Production</p>
                         <p class="detail__main-details__right-stats__item--production"></p>
                     </li>
+                    <li class="detail__main-details__right-stats__item">
+                        <p>Rating</p>
+                        <p class="detail__main-details__right-stats__item--rating"></p>
+                    </li>
                 </ul>
                 <ul class="detail__main-details__right-external"></ul>
             </div>
         </section>
 
+        <!-- Cast Carousel -->
         <section class="cast-carousel-container">
             <h1 class="cast-carousel-container__title">Cast</h1>
             <div class="cast-carousel"></div>
+        </section>
+
+        <!-- Review Carousel -->
+        <section class="review-carousel-container">
+            <h1 class="review-carousel-container__title">Reviews <button class="review-carousel-container__add">Add Review</button></h1>
+            <div class="review-carousel"></div>
+        </section>
+        <section class="reviewadd">
+            <form class="reviewadd__form" method="dialog">
+                <button class="reviewadd__form-back">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                </button>
+                <h2 class="reviewadd__form--title">Add a review</h2>
+                <label for="description" class="reviewadd__form-label">Description</label>
+                <textarea name="description" id="description" class="reviewadd__form-desc"></textarea>
+                <label for="rating" class="reviewadd__form-label">Rating</label>
+                <input type="number" value="0" name="rating" id="rating" min="0" max="10" class="reviewadd__form-rating">
+                <label for="name" class="reviewadd__form-label">Name</label>
+                <input type="text" name="name" id="name" class="reviewadd__form-name">
+                <input type="button" value="submit" class="reviewadd__form-submit">
+            </form>
         </section>
     </section>
 

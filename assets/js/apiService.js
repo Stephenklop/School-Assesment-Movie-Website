@@ -87,6 +87,17 @@ const getMovieSocials = (movieId) => {
     });
 }
 
+const getMovieReviews = (movieId) => {
+    return new Promise((result, reject) => {
+        connect(`movie/${movieId}/reviews`)
+        .then(data => {
+            return data.json();
+        })
+        .then(res => result(res))
+        .catch(err => reject(err));
+    });
+}
+
 // TV Shows
 const getAllTrendingTVShows = () => {
     return new Promise((result, reject) => {

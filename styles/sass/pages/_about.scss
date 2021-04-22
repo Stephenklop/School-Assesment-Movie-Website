@@ -1,5 +1,5 @@
-.detail,
-.castDetail {
+
+.about {
   &__main {
     padding-top: 4.5rem;
 
@@ -40,6 +40,14 @@
           list-style: none;
           margin-bottom: 3rem;
 
+          &__title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            letter-spacing: 0.04rem;
+            font-weight: 400;
+          }
+
           &__item {
             width: 100%;
             display: flex;
@@ -49,6 +57,11 @@
               font-size: 1.5rem;
               line-height: 1.6rem;
               color: white;
+
+              span {
+                  display: block;
+                  margin-top: .5rem;
+              }
 
               &:first-child {
                 width: 9rem;
@@ -83,87 +96,11 @@
         }
       }
     }
-
-    .reviewadd {
-      position: fixed;
-      z-index: 5;
-      right: 0;
-      bottom: 4.5rem;
-      display: none;
-      width: 100%;
-      height: calc(100% - 8.5rem);
-      background-color: #141414;
-      padding: 3rem 1.5rem;
-      overflow: scroll;
-      overflow-x: hidden;
-
-      &-active {
-        display: block;
-      }
-
-      &__form {
-        width: 100%;
-        padding: 2rem 5rem;
-
-        &-back {
-            display: none;
-        }
-
-        &--title {
-          margin-bottom: 1.5rem;
-          display: flex;
-          align-items: baseline;
-          font-size: 2rem;
-          letter-spacing: 0.04rem;
-          font-weight: 400;
-          color: white;
-        }
-
-        &-label {
-          display: block;
-          color: white;
-          font-size: 1.6rem;
-          margin-bottom: 1rem;
-
-          &:not(:first-child) {
-            margin-top: 2rem;
-          }
-        }
-
-        input,
-        textarea {
-          width: 100%;
-          padding: 1rem;
-          background-color: #fafafa;
-          border: none;
-          font-size: 1.6rem;
-        }
-
-        input {
-          height: 4.5rem;
-        }
-
-        textarea {
-          height: 15rem;
-          resize: none;
-          font-size: 1.6rem;
-        }
-
-        input[type="button"] {
-          margin-top: 4rem;
-          font-size: 1.6rem;
-          text-transform: uppercase;
-          background-color: #2f2f2f;
-          color: white;
-        }
-      }
-    }
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .detail,
-  .castDetail {
+  .about {
     &__main {
       &-details {
         margin-right: 5rem;
@@ -174,14 +111,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .detail,
-  .castDetail {
-    .reviewadd {
-      &__form {
-        width: 70%;
-      }
-    }
-
+  .about {
     &__main {
         padding-top: 4.5rem;
     
@@ -200,8 +130,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .detail,
-  .castDetail {
+  .about {
     display: grid;
     grid-template-columns: 10rem 1fr;
     grid-template-rows: auto;
@@ -298,56 +227,6 @@
               }
             }
           }
-        }
-      }
-
-      .reviewadd {
-        height: 100%;
-        width: calc(100% - 10rem);
-        top: 0;
-        right: 0;
-
-        &__form {
-          width: 50%;
-
-          &-back {
-            width: 2.4rem;
-            height: 2.4rem;
-            padding: 0;
-            margin: 0;
-            background: transparent;
-            border: none;
-            outline: 0;
-            transition: all .2s;
-            cursor: pointer;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 4rem;
-
-            ion-icon {
-                display: block;
-                height: 100%;
-                width: 100%;
-                color: white;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .castDetail {
-    position: relative;
-
-    &__main {
-      &-details {
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-
-        &__right {
-          margin-right: 5rem;
         }
       }
     }

@@ -16,7 +16,7 @@ const setCarousel = (movieUpcoming) => {
         prevNextButtons: false,
         draggable: false,
         freeScroll: false,
-        autoPlay: 15000,
+        autoPlay: 8000,
         setGallerySize: false,
         adaptiveHeight: false,
         lazyLoad: movieUpcoming.results.length
@@ -123,6 +123,8 @@ const setSearch = () => {
         const search = document.querySelector('.search');
         const details = document.querySelector('.search-results');
 
+        console.log('item clicked');
+
         // Check if search bar is already initialized 
         if(search.classList.contains("search-active")) {
 
@@ -186,3 +188,8 @@ const setAddMovie = () => {
         document.querySelector('.addmovie').classList.toggle("addmovie-active");
     });
 }
+
+$('.addmovie__form-back').on('click', () => {
+    console.log('back');
+    document.querySelector('.addmovie').classList.remove('addmovie-active');
+});

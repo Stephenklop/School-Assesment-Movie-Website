@@ -3,14 +3,17 @@ window.onload = async () => {
     const movieDetails = await getMovieDetails(urlParams.get("id"));
     const movieCredits = await getMovieCredits(urlParams.get("id"));
     const movieSocials = await getMovieSocials(urlParams.get("id"));
+    const movieReviews = await getMovieReviews(urlParams.get("id"));
 
     console.log(movieDetails);
     console.log(movieCredits);
     console.log(movieSocials);
+    console.log(movieReviews);
     
-    setMovieDetails(movieDetails);
+    setMovieDetails(movieDetails, movieCredits);
     setSocials(movieSocials);
     setCastCarousel(movieCredits);
+    setReviewCarousel(movieReviews);
 }
 
 getFromURL = () => {
@@ -18,14 +21,18 @@ getFromURL = () => {
     return new URLSearchParams(queryString);
 }
 
-setMovieDetails = (movieDetails) => {
+setMovieDetails = (movieDetails, movieCredits) => {
     setPageTitle(movieDetails.title);
 
     $('.detail__main-details__left-img').attr('src', apiImageUrl + movieDetails.poster_path);
     $('.detail__main-details__right-overview__desc').text(movieDetails.overview);
     $('.detail__main-details__right-stats__item--releasedate').text(convertDate(movieDetails.release_date));
     $('.detail__main-details__right-stats__item--runtime').text(convertRunTime(movieDetails.runtime));
-    $('.detail__main-details__right-stats__item--director').text(`<p></p>`);
+
+    // Set Director
+    let directorName = getDirector(movieCredits.crew)
+
+    $('.detail__main-details__right-stats__item--director').text(directorName);
 
     // Set budget
     $('.detail__main-details__right-stats__item--budget').text(convertCurrency(movieDetails.budget));
@@ -68,10 +75,27 @@ setMovieDetails = (movieDetails) => {
         }
     }
     $('.detail__main-details__right-stats__item--production').text(productionString);
+
+    // Set rating
+    $('.detail__main-details__right-stats__item--rating').text(movieDetails.vote_average);
 }
 
 setPageTitle = (title) => {
     $('.mobileback__text').text(title);
+}
+
+getDirector = (crew) => {
+    let directorname;
+
+    console.log(crew);
+
+    for(let i = 0; i < crew.length; i++) {
+        if(crew[i].job === "Director") {
+            directorname = crew[i].name;
+        }
+    }
+
+    return directorname;
 }
 
 setSocials = (movieSocials) => {
@@ -115,8 +139,37 @@ fillCastCarousel = async ($castCarousel, apiResultCast) => {
     for(let i = 0; i < apiResultCast.cast.length; i++) {
         var $cellElems = $(makeCellHtmlDetail('cast-carousel', apiResultCast.cast[i]));
         $castCarousel.flickity( 'append', $cellElems );
-        console.log(apiResultCast.cast[i]);
     }
+}
+
+setReviewCarousel = (reviews) => {
+    let $reviewCarousel = $('.review-carousel').flickity({
+        pageDots: false,
+        prevNextButtons: false,
+        accessibility: true,
+        contain: true
+    });
+
+    fillReviewCarousel($reviewCarousel, reviews);
+}
+
+const fillReviewCarousel = ($reviewCarosuel, reviews) => {
+    for(let i = 0; i < reviews.results.length; i++) {
+        let $cellElems = $(makeCellHtmlReview(reviews.results[i]));
+        $reviewCarosuel.flickity('append', $cellElems);
+    }
+}
+
+const makeCellHtmlReview = (item) => {
+    return `
+        <div class="review-carousel__item">
+            <div class="review-carousel__item-content">
+                <p class="review-carousel__item-text">${item.content}</p>
+                <p class="review-carousel__item-rating">Rating: ${item.author_details.rating}</p>
+                <h2 class="review-carousel__item-name">${item.author}</h2>
+            </div>
+        </div>
+    `
 }
 
 const makeCellHtmlDetail = (itemClass, item) => {
@@ -156,5 +209,20 @@ convertCurrency = (currency) => {
 }
 
 $('.mobileback__backicon').on('click', () => {
-    window.history.back();
-})
+
+    if($('.reviewadd').hasClass('reviewadd-active')) {
+        document.querySelector('.reviewadd').classList.remove('reviewadd-active');
+    } else {
+        window.history.back();
+    }
+});
+
+$('.reviewadd__form-back').on('click', () => {
+    console.log('back');
+    document.querySelector('.reviewadd').classList.remove('reviewadd-active');
+});
+
+$('.review-carousel-container__add').on('click', () => {
+    console.log('review clicked');
+    document.querySelector('.reviewadd').classList.add("reviewadd-active");
+});

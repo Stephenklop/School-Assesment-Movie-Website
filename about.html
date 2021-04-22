@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieSearch</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./styles/css/style.css">
+</head>
+<body class="detail">
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <ul class="navigation__list">
+            <li class="navigation__list-item">
+                <a href="index.html">
+                    <ion-icon name="home-outline"></ion-icon>
+                </a>
+            </li>
+            <li class="navigation__list-item">
+                <a href="about.html" class="active">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+            </li>
+            <li class="navigation__list-item navigation__list-item__addmovie">
+                <a>
+                    <ion-icon name="add-outline"></ion-icon>
+                </a>
+            </li>
+            <li class="navigation__list-item navigation__list-item__search">
+                <a>
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Search Bar -->
+    <input type="search" class="search" placeholder="Search for a movie...">
+    <section class="search-results">
+        <h2 class="search-results__for">Results For: </h2>
+        <div class="search-results__results"></div>
+    </section>
+
+    <!-- Add Movie Bar -->
+    <section class="addmovie">
+        <form class="addmovie__form" method="dialog">
+            <button class="addmovie__form-back">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </button>
+            <h2 class="addmovie__form--title">Add a movie</h2>
+            <label for="title" class="addmovie__form-label">Title</label>
+            <input type="text" name="title" id="title">
+
+            <label for="releaseyear" class="addmovie__form-label">Release Year</label>
+            <input type="date" name="releaseyear" id="releaseyear">
+            
+            <label for="movielength" class="addmovie__form-label">Movie Length In Minutes</label>
+            <input type="number" name="movielength" id="movielength">
+            
+            <label for="description" class="addmovie__form-label">Description</label>
+            <textarea name="description" id="description"></textarea>
+
+            <label for="director" class="addmovie__form-label">Director</label>
+            <input type="text" name="director" id="director">
+
+            <label for="budget" class="addmovie__form-label">Budget</label>
+            <input type="number" name="budget" id="budget">
+
+            <label for="revenue" class="addmovie__form-label">Revenue</label>
+            <input type="number" name="revenue" id="revenue">
+
+            <label for="genre" class="addmovie__form-label">Genre</label>
+            <input type="text" name="genre" id="genre">
+
+            <label for="status" class="addmovie__form-label">Status</label>
+            <input type="text" name="status" id="status">
+
+            <label for="language" class="addmovie__form-label">Language</label>
+            <input type="text" name="language" id="language">
+
+            <label for="production" class="addmovie__form-label">Production</label>
+            <input type="text" name="production" id="production">
+
+            <label for="twitterlink" class="addmovie__form-label">Twitter Link</label>
+            <input type="text" name="twitterlink" id="twitterlink">
+
+            <label for="facebooklink" class="addmovie__form-label">Facebook Link</label>
+            <input type="text" name="facebooklink" id="facebooklink">
+
+            <label for="instagramlink" class="addmovie__form-label">Instagram Link</label>
+            <input type="text" name="instagramlink" id="instagramlink">
+
+            <label for="cast" class="addmovie__form-label">Cast</label>
+            <textarea name="cast" id="cast"></textarea>
+            
+            <input type="button" value="submit" class="addmovie__form-submit">
+        </form>
+    </section>
+
+    <!-- Main Section -->
+    <section class="about__main">
+        <section class="about__main-details">
+            <div class="about__main-details__left">
+                <img src="./assets/img/stephen.jpg" alt="Stephen" class="about__main-details__left-img">
+            </div>
+            <div class="about__main-details__right">
+                <div class="about__main-details__right-overview">
+                    <h2 class="about__main-details__right-overview__title">Storyline</h2>
+                    <p class="about__main-details__right-overview__desc">
+                        Hi, My name is Stephen Klop. I am 19 years old. I am an enthusiastic 
+                        front-end developer who is eager to contribute to team success through 
+                        hard work, attention to detail and excellent organizational skills. 
+                        Clear understanding of front-end development and a little bit of back-end 
+                        development. Motivated to learn, grow and excel.
+                    </p>
+                </div>
+                <ul class="about__main-details__right-stats">
+                    <h2 class="about__main-details__right-stats__title">Personalia</h2>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Name</p>
+                        <p>Stephen Klop</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Address</p>
+                        <p>
+                            <span>Begoniastraat 9</span>
+                            <span>2951BC, Alblasserdam</span>
+                            <span>Netherlands</span>
+                        </p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Phone</p>
+                        <p>+31 6 15108300</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Email</p>
+                        <p>hi@stephenklop.nl</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Date of birth</p>
+                        <p>18 July 2001</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Place of birth</p>
+                        <p>Hendrik-Ido-Ambacht</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Nationality</p>
+                        <p>Dutch</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Drivers License</p>
+                        <p>B</p>
+                    </li>
+                </ul>
+                <ul class="about__main-details__right-stats">
+                    <h2 class="about__main-details__right-stats__title">Skills</h2>
+                    <li class="about__main-details__right-stats__item">
+                        <p>HTML5</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>CSS3</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>JavaScript</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Angular</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>SCSS</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Git</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Node.js</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>SQL</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Ionic 5</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>jQuery</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Trello</p>
+                    </li>
+                    <li class="about__main-details__right-stats__item">
+                        <p>Troubleshooting</p>
+                    </li>
+                </ul>
+                <ul class="about__main-details__right-external"></ul>
+            </div>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; Stephen Klop. All rights reserved.</p>
+        <p>Designed by 
+            <a href="https://jason.codes/">Jason Ujma-Alvis</a>, built by 
+            <a href="https://github.com/Stephenklop">Stephen Klop</a>, data provided by 
+            <a href="https://www.themoviedb.org/">TMDb</a>.
+        </p>
+        <ul>
+            <li>
+                <a href="https://github.com/Stephenklop" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/stephen-klop-982b79149/" target="_blank">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:hi@stephenklop.nl" target="_blank">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./assets/js/apiService.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/about.js"></script>
+</body>
+</html>

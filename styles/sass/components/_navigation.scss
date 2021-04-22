@@ -17,7 +17,8 @@
             flex: 1 1 auto;
             height: 100%;
 
-            a {
+            a,
+            button {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -27,6 +28,7 @@
                 transition: all .2s;
                 color: white;
                 background-color: transparent;
+                border: none;
 
                 &.active ion-icon {
                     color: #1971B7;

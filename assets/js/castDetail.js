@@ -16,6 +16,8 @@ getFromURL = () => {
 }
 
 setCastDetails = (personDetails) => {
+    setPageTitle(personDetails.name);
+
     $('.castDetail__main-details__left-img').attr('src', apiImageUrl + personDetails.profile_path);
     $('.castDetail__main-details__right-overview__name').text(personDetails.name);
     $('.castDetail__main-details__right-overview__desc').text(personDetails.biography);
@@ -47,3 +49,16 @@ appendSocialToList = (link, logoName) => {
     </li>
     `)
 }
+
+setPageTitle = (name) => {
+    $('.mobileback__text').text(name);
+}
+
+$('.mobileback__backicon').on('click', () => {
+
+    if($('.reviewadd').hasClass('reviewadd-active')) {
+        document.querySelector('.reviewadd').classList.remove('reviewadd-active');
+    } else {
+        window.history.back();
+    }
+});

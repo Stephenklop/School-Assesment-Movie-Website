@@ -90,7 +90,7 @@ const makeCellHtmlMain = (item) => {
                 </div>
                 <p class="carousel__item-info__desc">${item.overview}</p>
             </div>
-            <img alt="${item.title}" data-flickity-lazyload-srcset="${apiImageUrl + item.backdrop_path}" class="carousel__item-backdrop" />
+            <img alt="${item.title}" rel="noreferrer" data-flickity-lazyload-srcset="${apiImageUrl + item.backdrop_path}" class="carousel__item-backdrop" />
         </div>
     `
 }

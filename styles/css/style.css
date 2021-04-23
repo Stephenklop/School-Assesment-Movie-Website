@@ -206,6 +206,44 @@ body {
           margin-right: 1.2rem;
           font-size: 1.4rem; }
 
+.item-carousel-container {
+  margin: 2.5rem 0;
+  margin-right: 0; }
+  .item-carousel-container__title {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: baseline;
+    font-size: 1.8rem;
+    letter-spacing: .04rem;
+    font-weight: 400;
+    color: white; }
+    .item-carousel-container__title a {
+      color: #2196f3;
+      letter-spacing: .4px;
+      text-decoration: none;
+      font-size: 1.4rem;
+      margin-left: 1rem; }
+
+.item-carousel__item {
+  width: calc(33.333% - 7.33326px);
+  counter-increment: carousel-cell;
+  margin-right: .8rem; }
+  .item-carousel__item-link {
+    text-decoration: none; }
+  .item-carousel__item-img {
+    width: 100%; }
+  .item-carousel__item-title, .item-carousel__item-name {
+    display: none; }
+  .item-carousel__item-character {
+    font-size: 1.4rem;
+    color: #80868b;
+    letter-spacing: .04rem;
+    margin-top: .5rem; }
+
+.item-carousel .flickity-slider {
+  margin-left: 1.5rem; }
+
 .movie-carousel-container,
 .cast-carousel-container {
   margin: 2.5rem 0;
@@ -636,43 +674,16 @@ body {
             text-decoration: none; } }
 
 .addmovie {
-  position: fixed;
   z-index: 5;
-  right: 0;
-  bottom: 4.5rem;
-  display: none;
   width: 100%;
   height: 100%;
   background-color: #141414;
-  padding: 3rem 1.5rem;
-  overflow: scroll;
-  overflow-x: hidden; }
+  padding: 3rem 1.5rem; }
   .addmovie-active {
     display: block; }
   .addmovie__form {
     width: 100%;
-    padding: 2rem 5rem;
-    margin-top: 5rem; }
-    .addmovie__form-back {
-      width: 2.4rem;
-      height: 2.4rem;
-      padding: 0;
-      margin: 0;
-      background: transparent;
-      border: none;
-      outline: 0;
-      transition: all .2s;
-      cursor: pointer;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 4rem; }
-      .addmovie__form-back ion-icon {
-        display: block;
-        height: 100%;
-        width: 100%;
-        color: white; }
+    padding: 2rem 5rem; }
     .addmovie__form--title {
       margin-bottom: 1.5rem;
       display: flex;

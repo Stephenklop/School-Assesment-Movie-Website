@@ -19,7 +19,7 @@
     <nav class="navigation">
         <ul class="navigation__list">
             <li class="navigation__list-item">
-                <a href="index.html" class="active">
+                <a href="index.html">
                     <ion-icon name="home-outline"></ion-icon>
                 </a>
             </li>
@@ -29,7 +29,7 @@
                 </a>
             </li>
             <li class="navigation__list-item navigation__list-item__addmovie">
-                <a href="filminput.html">
+                <a href="filminput.html" class="active">
                     <ion-icon name="add-outline"></ion-icon>
                 </a>
             </li>
@@ -50,14 +50,56 @@
 
     <!-- Main Section -->
     <section class="homepage__main">
-
-        <!-- Main Carousel -->
-        <section class="carousel"></section>
-
-        <!-- Trending Movies -->
-        <section class="movie-carousel-container">
-            <h1 class="movie-carousel-container__title">Trending Movies</h1>
-            <div class="movie-carousel"></div>
+        <section class="addmovie">
+            <form class="addmovie__form" method="dialog">
+                <h2 class="addmovie__form--title">Add a movie</h2>
+                <label for="title" class="addmovie__form-label">Title</label>
+                <input type="text" name="title" id="title">
+    
+                <label for="releaseyear" class="addmovie__form-label">Release Year</label>
+                <input type="date" name="releaseyear" id="releaseyear">
+                
+                <label for="movielength" class="addmovie__form-label">Movie Length In Minutes</label>
+                <input type="number" name="movielength" id="movielength">
+                
+                <label for="description" class="addmovie__form-label">Description</label>
+                <textarea name="description" id="description"></textarea>
+    
+                <label for="director" class="addmovie__form-label">Director</label>
+                <input type="text" name="director" id="director">
+    
+                <label for="budget" class="addmovie__form-label">Budget</label>
+                <input type="number" name="budget" id="budget">
+    
+                <label for="revenue" class="addmovie__form-label">Revenue</label>
+                <input type="number" name="revenue" id="revenue">
+    
+                <label for="genre" class="addmovie__form-label">Genre</label>
+                <input type="text" name="genre" id="genre">
+    
+                <label for="status" class="addmovie__form-label">Status</label>
+                <input type="text" name="status" id="status">
+    
+                <label for="language" class="addmovie__form-label">Language</label>
+                <input type="text" name="language" id="language">
+    
+                <label for="production" class="addmovie__form-label">Production</label>
+                <input type="text" name="production" id="production">
+    
+                <label for="twitterlink" class="addmovie__form-label">Twitter Link</label>
+                <input type="text" name="twitterlink" id="twitterlink">
+    
+                <label for="facebooklink" class="addmovie__form-label">Facebook Link</label>
+                <input type="text" name="facebooklink" id="facebooklink">
+    
+                <label for="instagramlink" class="addmovie__form-label">Instagram Link</label>
+                <input type="text" name="instagramlink" id="instagramlink">
+    
+                <label for="cast" class="addmovie__form-label">Cast</label>
+                <textarea name="cast" id="cast"></textarea>
+                
+                <input type="button" value="submit" class="addmovie__form-submit">
+            </form>
         </section>
     </section>
 
@@ -76,7 +118,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/stephen-klop-982b79149/" rel="noreferrer" target="_blank">
+                <a href="https://www.linkedin.com/in/stephen-klop-982b79149/" target="_blank">
                     <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
             </li>
@@ -94,6 +136,6 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="./assets/js/apiService.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/movieInput.js"></script>
 </body>
 </html>

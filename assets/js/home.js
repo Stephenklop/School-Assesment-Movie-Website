@@ -1,7 +1,3 @@
-$('.mobileback__backicon').on('click', () => {
-    window.history.back();
-})
-
 const setSearch = () => {
 
     // Initialize all search components when clicked on search button

@@ -59,6 +59,62 @@
     }
 }
 
+.item-carousel {
+    &-container {
+        margin: 2.5rem 0;
+        margin-right: 0;
+
+        &__title {
+            margin-bottom: 1.5rem;
+            margin-left: 1.5rem;
+            display: flex;
+            align-items: baseline;
+            font-size: 1.8rem;
+            letter-spacing: .04rem;
+            font-weight: 400;
+            color: white;
+
+            a {
+                color: #2196f3;
+                letter-spacing: .4px;
+                text-decoration: none;
+                font-size: 1.4rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    &__item {   
+        width: calc(33.333% - 7.33326px);
+        counter-increment: carousel-cell;
+        margin-right: .8rem;
+
+        &-link {
+            text-decoration: none;
+        }
+
+        &-img {
+            width: 100%;
+        }
+
+        &-title,
+        &-name {
+            display: none;
+        }
+
+        &-character {
+            font-size: 1.4rem;
+            color: #80868b;
+            letter-spacing: .04rem;
+            margin-top: .5rem;
+        }
+    }
+
+    .flickity-slider {
+        margin-left: 1.5rem;
+    }
+}
+
 .movie-carousel,
 .cast-carousel {
     &-container {
